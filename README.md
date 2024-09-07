@@ -1,7 +1,7 @@
 # 100,000 KeySound BMS File Format Idea
 
 
-File Layout:
+### File Layout:
 
 *---------------------- HEADER FIELD
 

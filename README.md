@@ -15,18 +15,24 @@
 #TOTAL 100
 #STAGEFILE file.bmp
 
+#RANDOM 6
+#IF 1
+#ARTIST Upload18
+#ENDIF
+#ENDRANDOM
+
 #WAV00001: key.wav
-└00001 ~ 99999
+     └ 00001 ~ 99999
 
 *---------------------- MAIN DATA FIELD
 #001.16.008.000.0: 00001
-└bar.line.split.index.type: 00000
+└ bar.line.split.index.type: 00000
     1 ~ 128 ┘     │    │
   0 ~ (split - 1) ┘    │
       0: Short 1: Long ┘
 
 #001.02: 0.75 // i
-└Time signature:
+└ Time signature:
 m = round(i x 4)
 n = 4
 
@@ -40,5 +46,4 @@ n = 4
 
 
 ## TODO:
-1. Add #VOLWAV, #BMP, #BGA and set time signature
-2. Filter Speed, Scroll, Bpm, Stop, BGA, Layer, Poor
+1. I have no idea

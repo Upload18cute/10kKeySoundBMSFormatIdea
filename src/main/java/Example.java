@@ -5,6 +5,7 @@ import nbms.getData.MainData;
 import java.io.IOException;
 import java.util.Scanner;
 
+// Just how to get .nbms data.
 public class Example {
     public static void main(String[] args) throws IOException {
         doLoad("song.nbms");

@@ -27,5 +27,7 @@
 ![Example](https://github.com/Upload18cute/10kKeySoundBMSFormatIdea/blob/main/Example.png)
 
 
+
+
 ## TODO:
-1. 
+1. add #VOLWAV, #BMP, #BGA and set time signature

@@ -1,4 +1,5 @@
 # 99,999 KeySound BMS File Format Idea
+~~I hate my bad english~~
 
 
 ## File Layout:

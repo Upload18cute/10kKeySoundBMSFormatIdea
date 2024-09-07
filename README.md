@@ -1,7 +1,7 @@
 # 100,000 KeySound BMS File Format Idea
 
 
-### File Layout:
+## File Layout:
 ```
 *---------------------- HEADER FIELD
 #PLAYER Single / Double
@@ -25,3 +25,7 @@
       0: Short 1: Long ┘
 ```
 ![Example](https://github.com/Upload18cute/10kKeySoundBMSFormatIdea/blob/main/Example.png)
+
+
+## TODO:
+1. 

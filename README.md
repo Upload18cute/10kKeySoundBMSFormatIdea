@@ -50,7 +50,7 @@ n = 4
 
 ## Example.java Output
 ```
-File: D:\DEV\JAVA\NewBMS\song.nbms
+File: ../song.nbms
 
 ============================
 

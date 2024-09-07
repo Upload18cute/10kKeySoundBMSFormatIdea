@@ -32,7 +32,7 @@
       0: Short 1: Long ┘
 
 #001.02: 0.75 // i
-└ Time signature:
+└ Time signature (Not sure. Because I gave up on maths.):
 m = round(i x 4)
 n = 4
 

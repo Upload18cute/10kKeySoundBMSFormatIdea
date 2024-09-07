@@ -1,12 +1,13 @@
 package nbms;
 
 import nbms.getData.HeaderData;
+import nbms.getData.HeaderDataImpl;
 import nbms.getData.MainData;
+import nbms.getData.MainDataImpl;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 public class NBMS {
@@ -14,12 +15,12 @@ public class NBMS {
     private final List<String> mainDataField = new ArrayList<>();
     private final HeaderData headerData;
     private final MainData mainData;
-    private boolean loadingFinish;
+    boolean loadingFinish;
 
     // Constructor to initialize HeaderData and MainData
     public NBMS() {
-        this.headerData = new HeaderData();
-        this.mainData = new MainData();
+        this.headerData = new HeaderDataImpl();
+        this.mainData = new MainDataImpl();
     }
 
     public HeaderData getHeaderData() {
@@ -41,6 +42,9 @@ public class NBMS {
             String line;
             boolean inHeaderField = false;
             boolean inMainDataField = false;
+            boolean randomBlockActive = false;
+            int randomValue = -1;
+            boolean conditionMet = false;
 
             while ((line = br.readLine()) != null) {
                 if (line.equals("") || line.equals(" ")) {
@@ -50,23 +54,53 @@ public class NBMS {
                 if (line.equals("*---------------------- HEADER FIELD")) {
                     inHeaderField = true;
                     inMainDataField = false;
+                    randomBlockActive = false;
                 } else if (line.equals("*---------------------- MAIN DATA FIELD")) {
                     inHeaderField = false;
                     inMainDataField = true;
-                } else if (inHeaderField) {
-                    headerField.add(line);
-                } else if (inMainDataField) {
-                    mainDataField.add(line);
+                    randomBlockActive = false;
+                } else if (line.startsWith("#RANDOM")) {
+                    String[] parts = line.split(" ");
+                    int maxValue = Integer.parseInt(parts[1].trim());
+                    randomValue = (int) (Math.random() * maxValue) + 1;
+                    randomBlockActive = true;
+                } else if (line.startsWith("#IF")) {
+                    if (!randomBlockActive) continue;
+                    String[] parts = line.split(" ");
+                    int ifValue = Integer.parseInt(parts[1].trim());
+                    conditionMet = (randomValue == ifValue);
+                } else if (line.startsWith("#ENDIF")) {
+                    if (!randomBlockActive) continue;
+                    conditionMet = false;
+                } else if (line.startsWith("#ENDRANDOM")) {
+                    randomBlockActive = false;
+                    randomValue = -1;
+                } else if (randomBlockActive) {
+                    if (conditionMet) {
+                        if (inHeaderField) {
+                            headerField.add(line);
+                        } else if (inMainDataField) {
+                            mainDataField.add(line);
+                        }
+                    }
+                } else {
+                    if (inHeaderField) {
+                        headerField.add(line);
+                    } else if (inMainDataField) {
+                        mainDataField.add(line);
+                    }
                 }
             }
         }
 
         headerData.parseHeaderField(headerField);
         mainData.parseMainDataField(mainDataField);
-        loadingFinish = true;
     }
 
-    public boolean loadingSuccess() {
+    /**
+     * @deprecated maybe who need...
+     * */
+    public boolean isLoadingSuccess() {
         return loadingFinish;
     }
 

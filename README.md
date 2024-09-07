@@ -30,4 +30,5 @@
 
 
 ## TODO:
-1. add #VOLWAV, #BMP, #BGA and set time signature
+1. Add #VOLWAV, #BMP, #BGA and set time signature
+2. Filter Speed, Scroll, Bpm, Stop, BGA, Layer, Poor

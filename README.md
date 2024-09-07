@@ -4,7 +4,7 @@
 Well, just an idea.
 
 
-Wouldn't it be nice to use?
+But it would be nice to use, don't you think?
 
 
 ## File Layout:

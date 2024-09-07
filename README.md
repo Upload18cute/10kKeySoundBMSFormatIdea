@@ -19,15 +19,20 @@
 └00001 ~ 99999
 
 *---------------------- MAIN DATA FIELD
-#001.16.008.000.0: WAV00001
-└bar.line.split.index.type: WAV00000 // i don't think you need this 'WAV'
+#001.16.008.000.0: 00001
+└bar.line.split.index.type: 00000 // i don't think you need this 'WAV'
     1 ~ 128 ┘     │    │
   0 ~ (split - 1) ┘    │
       0: Short 1: Long ┘
+
+#001.02: 0.75
+└Time signature: ↓↓↓↓↓↓
 ```
 ![Example](https://github.com/Upload18cute/10kKeySoundBMSFormatIdea/blob/main/Example.png)
 
-
+\[
+\text{Time signature} = \frac{\frac{m}{\text{GCD}(m, n)}}{\frac{n}{\text{GCD}(m, n)}}
+\]
 
 
 ## TODO:

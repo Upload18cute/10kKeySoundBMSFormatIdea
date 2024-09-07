@@ -1,4 +1,4 @@
-# 100,000 KeySound BMS File Format Idea
+# 99,999 KeySound BMS File Format Idea
 
 
 ## File Layout:

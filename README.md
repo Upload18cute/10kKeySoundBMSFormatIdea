@@ -20,7 +20,7 @@
 
 *---------------------- MAIN DATA FIELD
 #001.16.008.000.0: WAV00001
-└bar.line.split.index.type: WAV00000
+└bar.line.split.index.type: WAV00000 // i don't think you need this 'WAV'
     1 ~ 128 ┘     │    │
   0 ~ (split - 1) ┘    │
       0: Short 1: Long ┘

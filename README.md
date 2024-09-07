@@ -1,5 +1,10 @@
 # 99,999 KeySound BMS File Format Idea
-~~I hate my bad english~~
+~~I hate my bad english.~~
+
+Well, just an idea.
+
+
+Wouldn't it be nice to use?
 
 
 ## File Layout:
